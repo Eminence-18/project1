@@ -1,35 +1,54 @@
 #include <stdio.h>
-int main(void) {
-    char operator; //*here we declared operators which are characters that can be used in mathematical calculations
-    double number1, number2, result; //*here we are declaring variables*//
+#include <stdlib.h>
+#include <string.h>
 
-    printf("enter an operator (+, -, *, /): ");//*here you are requesting a user to enter an operator
-    scanf("%c", &operator); //*the user enters the operator of choice
+int main() {
+    int number1, number2, add, sub, mult, div, mod;
+    char operation;
 
-    printf("enter two numbers: ");
-    scanf("%lf %lf", &number1, &number2); //*the user enters the two numbers of choice
+    printf("Enter  number 1: ");
+    scanf("%d", &number1);
 
-    switch (operator) {
-        case '+':  //* in the case the user inputs the addition operator the result will be the summation of the two numbers*//
-            result = number1 + number2;
-        printf("addition of two numbers is %.2lf\n", result);
+    printf("Enter  number 2: ");
+    scanf("%d", &number2);
+
+    printf("Enter operation: ");
+    scanf(" %c", &operation);
+
+    switch (operation)
+
+    {
+        case '+':
+            add = number1 + number2;
+        printf("Addition of two numbers: %d\n", add);
         break;
 
         case '-':
-            result = number1 - number2;
-        printf("subtraction of two numbers is %.2lf\n", result);
+            sub = number1 - number2;
+        printf("Subtraction of two numbers: %d\n", sub);
         break;
 
         case '*':
-            result = number1 * number2;
-        printf("multiplication of two numbers is %.2lf\n", result);
+            mult = number1 * number2;
+        printf("Multiplication of two numbers: %d\n", mult);
         break;
 
         case '/':
-            result = number1 / number2;
-        printf("division of two numbers is %.2lf\n", result);
+            div = number1 / number2;
+        printf("Division of two numbers: %d\n", div);
+        break;
+
+        case '%':
+            mod = number1 % number2;
+        printf("Modulo of two numbers: %d\n", mod);
         break;
     }
 
-return 0;
+    add = number1 + number2;
+    sub = number1 - number2;
+    mult = number1 * number2;
+    div = number1 / number2;
+    mod = number1 % number2;
+
+    return 0;
 }
